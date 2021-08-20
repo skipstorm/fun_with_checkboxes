@@ -1,0 +1,99 @@
+/* Support CSS just for the examples */
+body {font-family: Arial, Helvetica, sans-serif;}
+.main {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.block {
+    margin: 30px auto 50px;
+    padding: 30px;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 30px rgb(48, 70, 89, .25);
+}
+/* / Support CSS just for the examples */
+
+
+/* Simple toggle */
+.fwc_toggle.fwc_block {margin-bottom: 16px; display: block;}
+.fwc_toggle span{line-height: 42px; vertical-align: middle; margin-right: 10px;}
+.fwc_toggle .checkmark,
+.fwc_toggle .radiomark {
+    display: inline-block;
+    width: 43px; height: 22px;
+    border-radius: 12px;
+    border: 1px #ddd solid;
+    position: relative;
+    cursor: pointer;
+}
+.fwc_toggle input {display: none;}
+.fwc_toggle .checkmark:after,
+.fwc_toggle .radiomark:after {
+    content: "";
+    position: absolute; 
+    top: 1px; left: 1px;
+    height: 20px; width: 20px;
+    background: rgb(0, 0, 0);
+    opacity: .3;
+    border-radius: 50%;
+}
+.fwc_toggle input:checked ~ .radiomark:after, 
+.fwc_toggle input:checked ~ .checkmark:after {
+    left: auto;
+    right: 1px;
+    opacity: 1;
+}
+/* / Simple toggle */
+
+/* Enabled / Disabled text */
+.fwc_toggle .fwc_extra.fwc_on_enabled {display: none;}
+.fwc_toggle .fwc_extra.fwc_extra_inline {margin: -20px 0 0 60px;}
+.fwc_toggle input:checked ~ .fwc_extra.fwc_on_enabled {display: block;}
+.fwc_toggle input:checked ~ .fwc_extra.fwc_on_disabled {display: none;}
+
+
+
+/* TABS */
+.fwc_tabs {height: 500px; position: relative;}
+.fwc_tabs label {display: inline-block;}
+.fwc_tabs input,
+.fwc_tabs .tab_content {display: none;}
+.fwc_tabs input:checked ~ .tab_content {display: block;}
+.fwc_tabs .tab_content {position: absolute; top: 58px; left: 0; width: 100%; max-height: 440px; border-top: 1px #333 solid; overflow: auto;}
+.fwc_tabs .tab_name {
+    height: 58px; line-height: 58px; padding: 0 24px; display: inline-block;
+}
+.fwc_tabs input:checked ~ .tab_name {
+    background: #333; color: #fff;
+}
+
+
+
+
+
+/* ACCORDION */
+.fwc_accordion {}
+.fwc_accordion label {display: block;}
+.fwc_accordion input {display: none;}
+.fwc_accordion .fwc_content {
+    transition-duration: 400ms;
+    overflow: hidden;
+
+    opacity: 0;
+    padding: 0;
+    border: 0;
+    height: 0;
+}
+.fwc_accordion input:checked ~ .fwc_content {
+    opacity: 1;
+    padding: 20px;
+    border: 1px #ddd solid;
+    border-width: 0 1px 1px 1px;
+    height: auto;
+}
+.fwc_accordion .fwc_title {
+    padding: 10px 20px; display: block; border: 1px #ddd solid; cursor: pointer;
+}
+.fwc_accordion input:checked ~ .fwc_title {
+    font-weight: bold;
+}
