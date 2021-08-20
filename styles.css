@@ -13,6 +13,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 /* / Support CSS just for the examples */
 
+/* Base styles */
+label[class^="fwc_"] input {display: none;}
+/* Enabled / Disabled text */
+label[class^="fwc_"] .fwc_on_enabled {display: none;}
+label[class^="fwc_"] input:checked ~ .fwc_on_enabled {display: block;}
+label[class^="fwc_"] input:checked ~ .fwc_on_disabled {display: none;}
+/* / Base styles */
 
 /* Simple toggle */
 .fwc_toggle.fwc_block {margin-bottom: 16px; display: block;}
@@ -26,7 +33,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
     position: relative;
     cursor: pointer;
 }
-.fwc_toggle input {display: none;}
 .fwc_toggle .checkmark:after,
 .fwc_toggle .radiomark:after {
     content: "";
@@ -36,28 +42,25 @@ body {font-family: Arial, Helvetica, sans-serif;}
     background: rgb(0, 0, 0);
     opacity: .3;
     border-radius: 50%;
+    transition-duration: 300ms;
 }
 .fwc_toggle input:checked ~ .radiomark:after, 
 .fwc_toggle input:checked ~ .checkmark:after {
     left: auto;
-    right: 1px;
+    left: calc(100% - 21px);
     opacity: 1;
 }
-/* / Simple toggle */
-
-/* Enabled / Disabled text */
-.fwc_toggle .fwc_extra.fwc_on_enabled {display: none;}
 .fwc_toggle .fwc_extra.fwc_extra_inline {margin: -20px 0 0 60px;}
-.fwc_toggle input:checked ~ .fwc_extra.fwc_on_enabled {display: block;}
-.fwc_toggle input:checked ~ .fwc_extra.fwc_on_disabled {display: none;}
+/* / Simple toggle */
 
 
 
 /* TABS */
 .fwc_tabs {height: 500px; position: relative;}
 .fwc_tabs label {display: inline-block;}
-.fwc_tabs input,
-.fwc_tabs .tab_content {display: none;}
+
+.fwc_tabs .tab_content,
+.fwc_tabs > label > input {display: none;}
 .fwc_tabs input:checked ~ .tab_content {display: block;}
 .fwc_tabs .tab_content {position: absolute; top: 58px; left: 0; width: 100%; max-height: 440px; border-top: 1px #333 solid; overflow: auto;}
 .fwc_tabs .tab_name {
@@ -74,7 +77,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
 /* ACCORDION */
 .fwc_accordion {}
 .fwc_accordion label {display: block;}
-.fwc_accordion input {display: none;}
 .fwc_accordion .fwc_content {
     transition-duration: 400ms;
     overflow: hidden;
