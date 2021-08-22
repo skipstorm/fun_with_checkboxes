@@ -78,6 +78,7 @@ label[class^="fwc_"] input:checked ~ .fwc_on_disabled {display: none;}
 
 /* ACCORDION */
 .fwc_accordion {}
+.fwc_accordion > label > input {display: none;}
 .fwc_accordion label {display: block;}
 .fwc_accordion .fwc_content {
     transition-duration: 400ms;
