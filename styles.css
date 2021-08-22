@@ -16,6 +16,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
 /* Base styles */
 label[class^="fwc_"] input {display: none;}
 /* Enabled / Disabled text */
+label[class^="fwc_"] .checkmark,
+label[class^="fwc_"] .radiomark {cursor: pointer;}
 label[class^="fwc_"] .fwc_on_enabled {display: none;}
 label[class^="fwc_"] input:checked ~ .fwc_on_enabled {display: block;}
 label[class^="fwc_"] input:checked ~ .fwc_on_disabled {display: none;}

@@ -16,11 +16,129 @@
     <style type="text/css">
         /* Variation on toggle base style */
         .fwc_toggle.variant_square .checkmark,
-        .fwc_toggle.variant_square .radiomar,
+        .fwc_toggle.variant_square .radiomark,
         .fwc_toggle.variant_square .checkmark:after,
-        .fwc_toggle.variant_square .radiomar:after {border-radius: 0;}
+        .fwc_toggle.variant_square .radiomark:after {border-radius: 0;}
+        /**/
+        .fwc_toggle.variant_2 .checkmark,
+        .fwc_toggle.variant_2 .radiomark {height: 2px; border-color: #000;}
+        .fwc_toggle.variant_2 .checkmark:after,
+        .fwc_toggle.variant_2 .radiomark:after {
+            border-radius: 2px; 
+            width: 6px;
+            transform: translateY(-10px); 
+            opacity: 1; 
+            background-color: #333;
+        }
+        .fwc_toggle.variant_2 input:checked ~ .checkmark:after,
+        .fwc_toggle.variant_2 input:checked ~ .radiomark:after {
+            background-color: #000;
+            left: calc(100% - 8px);
+        }
+        .fwc_toggle.variant_2 input:checked ~ span,
+        .fwc_toggle.variant_2 input:checked ~ span {
+            font-weight: bold;
+        }
+        /**/        
+        .fwc_toggle.variant_3 .checkmark,
+        .fwc_toggle.variant_3 .radiomark {height: 12px; border-color: #333;}
+        .fwc_toggle.variant_3 .checkmark:after,
+        .fwc_toggle.variant_3 .radiomark:after {
+            opacity: 1;
+            top: -6px;
+            left: 0;
+            height: 24px;
+            width: 24px;
+            box-shadow: 0 2px 4px #333;
+            background-color: #555;
+        }
+        .fwc_toggle.variant_3 input:checked ~ .checkmark:after,
+        .fwc_toggle.variant_3 input:checked ~ .radiomark:after {background-color: #000;}
+        /**/
+        .fwc_toggle.variant_4 .checkmark,
+        .fwc_toggle.variant_4 .radiomark {width: 80px; border-color: #333;}
+        .fwc_toggle.variant_4 .checkmark:after,
+        .fwc_toggle.variant_4 .radiomark:after {
+            opacity: 1;
+            width: 40px;
+            background-color: #555;
+            border-radius: 10px;
+        }
+        .fwc_toggle.variant_4 input:checked ~ .checkmark:after,
+        .fwc_toggle.variant_4 input:checked ~ .radiomark:after {
+            background-color: #000;
+            left: calc(100% - 41px);
+        }
+        .fwc_toggle.variant_4 .checkmark span,
+        .fwc_toggle.variant_4 .radiomark span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 22px;
+            line-height: 22px;
+            width: 40px;
+            text-align: center;
+        }
+        .fwc_toggle.variant_4 .checkmark span:last-child,
+        .fwc_toggle.variant_4 .radiomark span:last-child {
+            left: 40px;
+        }
+        /**/
+        .fwc_toggle.variant_5 .checkmark,
+        .fwc_toggle.variant_5 .radiomark {
+            width: 30px;
+            height: 30px;
+            border-color: #333;
+            border-radius: 14px;
+        }
+        .fwc_toggle.variant_5 .checkmark:after,
+        .fwc_toggle.variant_5 .radiomark:after {
+            opacity: 1;
+            width: 28px;
+            height: 28px;
+            background-color: #555;
+        }
+        .fwc_toggle.variant_5 input:checked ~ .checkmark:after,
+        .fwc_toggle.variant_5 input:checked ~ .radiomark:after {
+            background-color: #000;
+            left: calc(100% - 29px);
+        }
+        .fwc_toggle.variant_5 .checkmark span,
+        .fwc_toggle.variant_5 .radiomark span {
+            position: absolute;
+            top: 2px;
+            left: 0;
+            height: 22px;
+            line-height: 22px;
+            width: 60px;
+            text-align: right;
+            background: #ddd;
+            padding: 2px 8px;
+            border-radius: 14px;
+            transition-duration: 300ms;
+            transform-origin: 15px;
+            overflow: hidden;
+        }
+        .fwc_toggle.variant_5 .checkmark span:first-child,
+        .fwc_toggle.variant_5 .radiomark span:first-child {
+            transform: rotate(90deg);
+            width: 10px;
+        }
+        .fwc_toggle.variant_5 input:checked ~ .checkmark span:first-child,
+        .fwc_toggle.variant_5 input:checked ~ .radiomark span:first-child {
+            transform: rotate(0);
+            width: 60px;
+        }
+        .fwc_toggle.variant_5 input:checked ~ .checkmark span:last-child,
+        .fwc_toggle.variant_5 input:checked ~ .radiomark span:last-child {
+            transform: rotate(90deg);
+            width: 10px;
+        }
+
+
 
         /* Some examples of different styles */
+        /* 1 */
         .fwc_style1 {display: inline-block; margin-bottom: 16px;}
         .fwc_style1 .checkmark {
             border-radius: 50%;
@@ -40,13 +158,36 @@
             opacity: 1;
         }
         .fwc_style1 span{line-height: 30px; vertical-align: middle; margin-right: 10px;}
+
+
+        /* 2 */
+        .fwc_style2 {display: inline-block; margin-bottom: 16px;}
+        .fwc_style2 .checkmark {
+            display: inline-block;
+            width: 20px; height: 4px;
+            background-color: #000;
+            position: relative;
+        }
+        .fwc_style2 .checkmark:after {
+            content: " ";
+            display: inline-block;
+            width: 20px; height: 4px;
+            transition-duration: 300ms;
+            position: absolute; top: 0; left: 0;
+            background-color: #000;
+        }
+        .fwc_style2 input:checked ~ .checkmark:after {
+            transform: rotate(90deg);
+        }
+        .fwc_style2 span{line-height: 30px; vertical-align: middle; margin-right: 10px;}
     </style>
 </head>
 
 <body>
     <div class="main">
+        <p><strong>The following examples will use checkboxes or radio buttons as I fill like it fits best the style. OC they can be used for both.</strong></p>
         <h2>Style variants</h2>
-        <p></p>
+        <p>These work adding some style to the existing .fwc_toggle snippet</p>
 
         <form class="block">
             <!-- This form is just used to avoid name conflicts among the examples -->
@@ -65,8 +206,99 @@
                 </label>
             </div>
         </form>
+
+        <form class="block">
+            <!-- This form is just used to avoid name conflicts among the examples -->
+            <div>
+                <label class="fwc_toggle variant_2">
+                    <input checked type="checkbox" name="ex1_a">
+                    <span>Label left</span>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div>
+                <label class="fwc_toggle variant_2">
+                    <input type="checkbox" name="ex1_b">
+                    <span>Label left</span>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </form>
+
+        <form class="block">
+            <!-- This form is just used to avoid name conflicts among the examples -->
+            <div>
+                <label class="fwc_toggle variant_3">
+                    <input checked type="checkbox" name="ex1_a">
+                    <span>Label left</span>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div>
+                <label class="fwc_toggle variant_3">
+                    <input type="checkbox" name="ex1_b">
+                    <span>Label left</span>
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </form>
+
+        <form class="block">
+            <!-- This form is just used to avoid name conflicts among the examples -->
+            <div>
+                <label class="fwc_toggle variant_4">
+                    <input checked type="checkbox" name="ex1_a">
+                    <span>Label left</span>
+                    <span class="checkmark">
+                        <span>on</span>
+                        <span>off</span>
+                    </span>
+                </label>
+            </div>
+            <div>
+                <label class="fwc_toggle variant_4">
+                    <input type="checkbox" name="ex1_b">
+                    <span>Label left</span>
+                    <span class="checkmark">
+                        <span>on</span>
+                        <span>off</span>
+                    </span>
+                </label>
+            </div>
+        </form>
+
+        <form class="block">
+            <!-- This form is just used to avoid name conflicts among the examples -->
+            <div>
+                <label class="fwc_toggle variant_5">
+                    <input checked type="checkbox" name="ex1_a">
+                    <span>Label left</span>
+                    <span class="checkmark">
+                        <span>on</span>
+                        <span>off</span>
+                    </span>
+                </label>
+            </div>
+            <div>
+                <label class="fwc_toggle variant_5">
+                    <input type="checkbox" name="ex1_b">
+                    <span>Label left</span>
+                    <span class="checkmark">
+                        <span>on</span>
+                        <span>off</span>
+                    </span>
+                </label>
+            </div>
+        </form>
+
+
+
         <br>
+        
+        
+        
         <h2>More styles</h2>
+        <p>These are different examples, they don't use .fwc_toggle as base but the markup might be the same.</p>
         <form class="block">
             <!-- This form is just used to avoid name conflicts among the examples -->
             <div>
@@ -81,6 +313,33 @@
                     <input type="checkbox" name="ex1_b">
                     <span>Label left</span>
                     <span class="checkmark"></span>
+                </label>
+            </div>
+        </form>
+
+
+
+        <form class="block">
+            <!-- This form is just used to avoid name conflicts among the examples -->
+            <div>
+                <label class="fwc_style2">
+                    <input checked type="radio" name="ex1_a" value="1">
+                    <span class="checkmark"></span>
+                    <span>Label right</span>
+                </label>
+            </div>
+            <div>
+                <label class="fwc_style2">
+                    <input type="radio" name="ex1_a" value="2">
+                    <span class="checkmark"></span>
+                    <span>Label right</span>
+                </label>
+            </div>
+            <div>
+                <label class="fwc_style2">
+                    <input type="radio" name="ex1_a" value="3">
+                    <span class="checkmark"></span>
+                    <span>Label right</span>
                 </label>
             </div>
         </form>
