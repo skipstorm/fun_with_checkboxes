@@ -13,216 +13,78 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
+    <style type="text/css">
+        .page {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+        }
+        .menu {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+        .menu > div {
+            position: sticky;
+            top: 30px;
+        }
+        .menu ul {
+            padding: 0;
+            margin: 0;
+        }
+        .menu li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .main {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .block {
+            margin: 30px auto 50px;
+            padding: 30px;
+            max-width: 600px;
+            border-radius: 20px;
+            box-shadow: 0px 2px 30px rgb(48, 70, 89, .25);
+        }
+
+        iframe {
+            width: 700px; margin: 0 auto; height: calc(100vh - 80px);
+        }
+    </style>
 </head>
 
 <body>
-    <div class="main">
-        <h2>Simple toggler (.fwc_toggle)</h2>
-        <form>
-            <!-- This form is just used to avoid name conflicts among the examples -->
-            <div class="block">
-                <h3>using checkboxes</h3>
-                <div>
-                    <label class="fwc_toggle">
-                        <input type="checkbox" name="ex1_a">
-                        <span>Label left</span>
-                        <span class="checkmark"></span>
-                        <span>Label right</span>
-                    </label>
-                </div>
-                <div>
-                    <label class="fwc_toggle">
-                        <input type="checkbox" name="ex1_b">
-                        <span>Label left</span>
-                        <span class="checkmark"></span>
-                        <span>Label right</span>
-                    </label>
-                </div>
-
-                <hr>
-
-                <h3>using radio buttons</h3>
-                <label class="fwc_toggle ">
-                    <input type="radio" name="ex1_c" value="a">
-                    <span class="radiomark"></span>
-                </label>
-                <label class="fwc_toggle">
-                    <input type="radio" name="ex1_c" value="b">
-                    <span class="radiomark"></span>
-                </label>
-                <label class="fwc_toggle">
-                    <input type="radio" name="ex1_c" value="c">
-                    <span class="radiomark"></span>
-                </label>
-                <br><HR><br>
-                <a href="toggle_styles.html">Check out other styles</a>
+    <div class="page">
+        <div class="menu">
+            <div>
+                <h1>Fun With Checkboxes</h1>
+                <ul>
+                    <li><a href="#toggler">Toggler</a></li>
+                    <li><a href="#tabs">Tabs</a></li>
+                    <li><a href="#accordion">Accordion</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
             </div>
-
-            <h2>Toggler with details (.fwc_toggle .fwc_extra)</h2>
-            <div class="block">
-                <h3>Example 1</h3>
-                <div>
-                    <label class="fwc_toggle">
-                        <input type="checkbox" name="ex2_a">
-                        <span>Label left</span>
-                        <span class="checkmark"></span>
-                        <span>Label right</span>
-                        <div class="fwc_extra fwc_on_enabled">
-                            Some extra info for option enabled
-                        </div>
-                        <div class="fwc_extra fwc_on_disabled">
-                            Some extra info for option disabled
-                        </div>
-                    </label>
-                </div>
-                <h3>Example 2</h3>
-                <div>
-                    <label class="fwc_toggle fwc_block">
-                        <input type="checkbox" name="ex2_b">
-                        <span class="checkmark"></span>
-                        <div class="fwc_extra fwc_extra_inline fwc_on_enabled">
-                            Some extra info for option enabled
-                        </div>
-                        <div class="fwc_extra fwc_extra_inline fwc_on_disabled">
-                            Some extra info for option disabled
-                        </div>
-                    </label>
-                    <label class="fwc_toggle fwc_block">
-                        <input type="checkbox" name="ex2_c">
-                        <span class="checkmark"></span>
-                        <div class="fwc_extra fwc_extra_inline fwc_on_enabled">
-                            Some extra info for option enabled
-                        </div>
-                        <div class="fwc_extra fwc_extra_inline fwc_on_disabled">
-                            Some extra info for option disabled
-                        </div>
-                    </label>
-                </div>
-                <h3>Example 3 - radios</h3>
-                <div>
-                    <label class="fwc_toggle fwc_block">
-                        <input type="radio" name="ex2_d" value="a">
-                        <span class="radiomark"></span>
-                        <div class="fwc_extra fwc_extra_inline fwc_on_enabled">
-                            Some extra info for option enabled
-                            <br>
-                            Lorem ipsum dolor sit amet
-                        </div>
-                        <div class="fwc_extra fwc_extra_inline fwc_on_disabled">
-                            Some extra info for option disabled
-                            <br>
-                            Lorem ipsum dolor sit amet
-                        </div>
-                    </label>
-                    <label class="fwc_toggle fwc_block">
-                        <input type="radio" name="ex2_d" value="b">
-                        <span class="radiomark"></span>
-                        <div class="fwc_extra fwc_extra_inline fwc_on_enabled">
-                            Some extra info for option enabled
-                            <br>
-                            Lorem ipsum dolor sit amet
-                        </div>
-                        <div class="fwc_extra fwc_extra_inline fwc_on_disabled">
-                            Some extra info for option disabled
-                        </div>
-                    </label>
-                    <label class="fwc_toggle fwc_block">
-                        <input type="radio" name="ex2_d" value="c">
-                        <span class="radiomark"></span>
-                        <div class="fwc_extra fwc_extra_inline fwc_on_enabled">
-                            Some extra info for option enabled
-                            <br>
-                            Lorem ipsum dolor sit amet
-                        </div>
-                        <div class="fwc_extra fwc_extra_inline fwc_on_disabled">
-                            Some extra info for option disabled
-                            <br>
-                            Lorem ipsum dolor sit amet
-                            <br>
-                            Lorem ipsum dolor sit amet
-                        </div>
-                    </label>
-                </div>
-            </div>
-
-        </form>
+        </div>
+        <div class="main">
+            <h2><a name="toggler">Toggler</a></h2>
+            <iframe src="toys/simple_toggler/index.html"></iframe>
 
 
+            <h2><a name="tabs">Tabs</a></h2>
+            <iframe src="toys/tabs/index.html"></iframe>
 
 
+            <h2><a name="accordion">Accordion</a></h2>
+            <iframe src="toys/accordion/index.html"></iframe>
 
-        <h2>Tabs (.fwc_tabs)</h2>
-        <p>Scriptless tabs using hidden radios</p>
-        <form class="block">
-            <!-- This form is just used to avoid name conflicts among the examples -->
-            <div class="fwc_tabs">
-                <label>
-                    <input type="radio" checked name="ex1_1" value="1">
-                    <span class="tab_name">Tab 1</span>
-                    <div class="tab_content">
-                        <h4>Tab 1 selected</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
-                    </div>
-                </label>
-                <label>
-                    <input type="radio" name="ex1_1" value="2">
-                    <span class="tab_name">Tab 2</span>
-                    <div class="tab_content">
-                        <h4>Tab 2 selected</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nunc magna, ultrices nec fringilla ut, mollis eu augue. Ut eu aliquam lectus. Sed in tellus efficitur, pharetra lacus a, mollis odio. Nullam pretium risus nec ligula consectetur pellentesque. Morbi hendrerit eu quam ac fringilla. Suspendisse augue metus, convallis ac tristique quis, egestas non sapien. Morbi ac libero nec ipsum faucibus suscipit et faucibus leo. In ante massa, suscipit sit amet porttitor in, viverra vitae dolor. Fusce placerat mollis accumsan.</p>
-                        <p>Morbi faucibus bibendum consectetur. Suspendisse consequat porta sagittis. Sed ornare metus nec sem faucibus, quis elementum leo venenatis. Curabitur nec dui eget augue efficitur consequat eu sed neque. Nulla venenatis neque tortor, elementum faucibus purus finibus at. Ut posuere malesuada luctus. Vestibulum vitae felis mauris. Quisque gravida eleifend est id pellentesque. Quisque mattis, orci id ullamcorper ornare, ante felis rhoncus ipsum, at tincidunt magna velit sed elit. Praesent ullamcorper nunc nec sem viverra ullamcorper. Maecenas porta eu dui non bibendum. Mauris facilisis lorem neque, quis aliquam erat pulvinar eu. Nunc placerat nisl id mi hendrerit, porta imperdiet magna aliquam. Maecenas aliquet pretium nunc eu molestie. Nunc eu quam a nisi laoreet pretium id vitae dolor. Donec quis magna at tellus vehicula volutpat.</p>
-                        <p>Morbi faucibus bibendum consectetur. Suspendisse consequat porta sagittis. Sed ornare metus nec sem faucibus, quis elementum leo venenatis. Curabitur nec dui eget augue efficitur consequat eu sed neque. Nulla venenatis neque tortor, elementum faucibus purus finibus at. Ut posuere malesuada luctus. Vestibulum vitae felis mauris. Quisque gravida eleifend est id pellentesque. Quisque mattis, orci id ullamcorper ornare, ante felis rhoncus ipsum, at tincidunt magna velit sed elit. Praesent ullamcorper nunc nec sem viverra ullamcorper. Maecenas porta eu dui non bibendum. Mauris facilisis lorem neque, quis aliquam erat pulvinar eu. Nunc placerat nisl id mi hendrerit, porta imperdiet magna aliquam. Maecenas aliquet pretium nunc eu molestie. Nunc eu quam a nisi laoreet pretium id vitae dolor. Donec quis magna at tellus vehicula volutpat.</p>
-                    </div>
-                </label>
-                <label>
-                    <input type="radio" name="ex1_1" value="3">
-                    <span class="tab_name">Tab 3</span>
-                    <div class="tab_content">
-                        <h4>Tab 3 selected</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
-                    </div>
-                </label>
-            </div>
-        </form>
-
-
-
-
-
-        <h2>Accordion (.fwc_accordion)</h2>
-        <p>Scriptless accordion using hidden radios</p>
-        <form class="block">
-            <!-- This form is just used to avoid name conflicts among the examples -->
-            <div class="fwc_accordion">
-                <label>
-                    <input type="radio" checked name="ex1_1" value="1">
-                    <span class="fwc_title">Option 1</span>
-                    <div class="fwc_content">
-                        <p>Morbi faucibus bibendum consectetur. Suspendisse consequat porta sagittis. Sed ornare metus nec sem faucibus, quis elementum leo venenatis. Curabitur nec dui eget augue efficitur consequat eu sed neque. Nulla venenatis neque tortor, elementum faucibus purus finibus at. Ut posuere malesuada luctus. Vestibulum vitae felis mauris. Quisque gravida eleifend est id pellentesque. Quisque mattis, orci id ullamcorper ornare, ante felis rhoncus ipsum, at tincidunt magna velit sed elit. Praesent ullamcorper nunc nec sem viverra ullamcorper. Maecenas porta eu dui non bibendum. Mauris facilisis lorem neque, quis aliquam erat pulvinar eu. Nunc placerat nisl id mi hendrerit, porta imperdiet magna aliquam. Maecenas aliquet pretium nunc eu molestie. Nunc eu quam a nisi laoreet pretium id vitae dolor. Donec quis magna at tellus vehicula volutpat.</p>
-                    </div>
-                </label>
-                <label>
-                    <input type="radio" name="ex1_1" value="2">
-                    <span class="fwc_title">Option 2</span>
-                    <div class="fwc_content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nunc magna, ultrices nec fringilla ut, mollis eu augue. Ut eu aliquam lectus. Sed in tellus efficitur, pharetra lacus a, mollis odio. Nullam pretium risus nec ligula consectetur pellentesque. Morbi hendrerit eu quam ac fringilla. Suspendisse augue metus, convallis ac tristique quis, egestas non sapien. Morbi ac libero nec ipsum faucibus suscipit et faucibus leo. In ante massa, suscipit sit amet porttitor in, viverra vitae dolor. Fusce placerat mollis accumsan.</p>
-                    </div>
-                </label>
-                <label>
-                    <input type="radio" name="ex1_1" value="3">
-                    <span class="fwc_title">Option 3</span>
-                    <div class="fwc_content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
-                    </div>
-                </label>
-            </div>
-        </form>
+            <h2><a name="gallery">Gallery</a></h2>
+            <iframe src="toys/gallery/index.html"></iframe>
+        </div>
     </div>
 </body>
 

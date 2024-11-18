@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fun With Checkboxes</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../generic.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="main">
+        <h2>Simple toggler (.fwc_toggle)</h2>
+        <form>
+            <!-- This form is just used to avoid name conflicts among the examples -->
+            <div class="block">
+                <h3>using checkboxes</h3>
+                <div>
+                    <label class="fwc_toggle">
+                        <input type="checkbox" name="ex1_a">
+                        <span>Label left</span>
+                        <span class="checkmark"></span>
+                        <span>Label right</span>
+                    </label>
+                </div>
+                <div>
+                    <label class="fwc_toggle">
+                        <input type="checkbox" name="ex1_b">
+                        <span>Label left</span>
+                        <span class="checkmark"></span>
+                        <span>Label right</span>
+                    </label>
+                </div>
+
+                <hr>
+
+                <h3>using radio buttons</h3>
+                <label class="fwc_toggle ">
+                    <input type="radio" name="ex1_c" value="a">
+                    <span class="radiomark"></span>
+                </label>
+                <label class="fwc_toggle">
+                    <input type="radio" name="ex1_c" value="b">
+                    <span class="radiomark"></span>
+                </label>
+                <label class="fwc_toggle">
+                    <input type="radio" name="ex1_c" value="c">
+                    <span class="radiomark"></span>
+                </label>
+                <br><HR><br>
+                <a href="toggle_styles.html" target="_blank">Check out other styles</a>
+            </div>
+
+            <h2>Toggler with details (.fwc_toggle .fwc_extra)</h2>
+            <div class="block">
+                <h3>Example 1</h3>
+                <div>
+                    <label class="fwc_toggle">
+                        <input type="checkbox" name="ex2_a">
+                        <span>Label left</span>
+                        <span class="checkmark"></span>
+                        <span>Label right</span>
+                        <div class="fwc_extra fwc_on_enabled">
+                            Some extra info for option enabled
+                        </div>
+                        <div class="fwc_extra fwc_on_disabled">
+                            Some extra info for option disabled
+                        </div>
+                    </label>
+                </div>
+                <h3>Example 2</h3>
+                <div>
+                    <label class="fwc_toggle fwc_block">
+                        <input type="checkbox" name="ex2_b">
+                        <span class="checkmark"></span>
+                        <div class="fwc_extra fwc_extra_inline fwc_on_enabled">
+                            Some extra info for option enabled
+                        </div>
+                        <div class="fwc_extra fwc_extra_inline fwc_on_disabled">
+                            Some extra info for option disabled
+                        </div>
+                    </label>
+                    <label class="fwc_toggle fwc_block">
+                        <input type="checkbox" name="ex2_c">
+                        <span class="checkmark"></span>
+                        <div class="fwc_extra fwc_extra_inline fwc_on_enabled">
+                            Some extra info for option enabled
+                        </div>
+                        <div class="fwc_extra fwc_extra_inline fwc_on_disabled">
+                            Some extra info for option disabled
+                        </div>
+                    </label>
+                </div>
+                <h3>Example 3 - radios</h3>
+                <div>
+                    <label class="fwc_toggle fwc_block">
+                        <input type="radio" name="ex2_d" value="a">
+                        <span class="radiomark"></span>
+                        <div class="fwc_extra fwc_extra_inline fwc_on_enabled">
+                            Some extra info for option enabled
+                            <br>
+                            Lorem ipsum dolor sit amet
+                        </div>
+                        <div class="fwc_extra fwc_extra_inline fwc_on_disabled">
+                            Some extra info for option disabled
+                            <br>
+                            Lorem ipsum dolor sit amet
+                        </div>
+                    </label>
+                    <label class="fwc_toggle fwc_block">
+                        <input type="radio" name="ex2_d" value="b">
+                        <span class="radiomark"></span>
+                        <div class="fwc_extra fwc_extra_inline fwc_on_enabled">
+                            Some extra info for option enabled
+                            <br>
+                            Lorem ipsum dolor sit amet
+                        </div>
+                        <div class="fwc_extra fwc_extra_inline fwc_on_disabled">
+                            Some extra info for option disabled
+                        </div>
+                    </label>
+                    <label class="fwc_toggle fwc_block">
+                        <input type="radio" name="ex2_d" value="c">
+                        <span class="radiomark"></span>
+                        <div class="fwc_extra fwc_extra_inline fwc_on_enabled">
+                            Some extra info for option enabled
+                            <br>
+                            Lorem ipsum dolor sit amet
+                        </div>
+                        <div class="fwc_extra fwc_extra_inline fwc_on_disabled">
+                            Some extra info for option disabled
+                            <br>
+                            Lorem ipsum dolor sit amet
+                            <br>
+                            Lorem ipsum dolor sit amet
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>

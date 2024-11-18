@@ -1,0 +1,31 @@
+/* Simple toggle */
+.fwc_toggle.fwc_block {margin-bottom: 16px; display: block;}
+.fwc_toggle span{line-height: 42px; vertical-align: middle; margin-right: 10px;}
+.fwc_toggle .checkmark,
+.fwc_toggle .radiomark {
+    display: inline-block;
+    width: 43px; height: 22px;
+    border-radius: 12px;
+    border: 1px #ddd solid;
+    position: relative;
+    cursor: pointer;
+}
+.fwc_toggle .checkmark:after,
+.fwc_toggle .radiomark:after {
+    content: "";
+    position: absolute; 
+    top: 1px; left: 1px;
+    height: 20px; width: 20px;
+    background: rgb(0, 0, 0);
+    opacity: .3;
+    border-radius: 50%;
+    transition-duration: 300ms;
+}
+.fwc_toggle input:checked ~ .radiomark:after, 
+.fwc_toggle input:checked ~ .checkmark:after {
+    left: auto;
+    left: calc(100% - 21px);
+    opacity: 1;
+}
+.fwc_toggle .fwc_extra.fwc_extra_inline {margin: -20px 0 0 60px;}
+/* / Simple toggle */

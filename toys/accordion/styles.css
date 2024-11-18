@@ -1,0 +1,28 @@
+
+
+/* ACCORDION */
+.fwc_accordion {}
+.fwc_accordion > label > input {display: none;}
+.fwc_accordion label {display: block;}
+.fwc_accordion .fwc_content {
+    transition-duration: 400ms;
+    overflow: hidden;
+
+    opacity: 0;
+    padding: 0;
+    border: 0;
+    height: 0;
+}
+.fwc_accordion input:checked ~ .fwc_content {
+    opacity: 1;
+    padding: 20px;
+    border: 1px #ddd solid;
+    border-width: 0 1px 1px 1px;
+    height: auto;
+}
+.fwc_accordion .fwc_title {
+    padding: 10px 20px; display: block; border: 1px #ddd solid; cursor: pointer;
+}
+.fwc_accordion input:checked ~ .fwc_title {
+    font-weight: bold;
+}
