@@ -1,13 +1,14 @@
-# fun_with_checkboxes
- Some scriptless snippets using checkboxes
+# About
+ 
+ FWC (fun_with_checkboxes) is a way to achieve some common functionalities without using JavaScript
+
+# Try it
 
  https://skipstorm.github.io/fun_with_checkboxes/
 
 # Why
-It's just a way to showcase different styles for checkboxes/radio buttons and other things achievable without using JS
+
+It's just a way to showcase different styles for checkboxes/radio buttons and other things achievable without using JS.
+Does it have any use? Probably not.
 
 
-
-Did you know Captain Hook from Peter Pan really hates social media?
-
-As he ears TikTok he runs away.
